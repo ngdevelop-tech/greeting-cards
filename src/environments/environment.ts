@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyDI7exz67HYzkVXpoaDkLBa3dULLOL62vY",
+    authDomain: "greeting-cards-2276a.firebaseapp.com",
+    databaseURL: "https://greeting-cards-2276a.firebaseio.com",
+    projectId: "greeting-cards-2276a",
+    storageBucket: "greeting-cards-2276a.appspot.com",
+    messagingSenderId: "327581709463",
+    appId: "1:327581709463:web:024d5412f32a01a7c765d2",
+    measurementId: "G-Z76GZTYFXD"
+  }
 };
 
 /*

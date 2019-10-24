@@ -1,17 +1,43 @@
-<div class="greeting-card">
-    <!-- <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-    </div> -->
-    <form>
-        <div class="form-group">
-            <label for="">Select File</label>
-            <input type="file" class="form-control-file" name="" id="" placeholder="" aria-describedby="fileHelpId">
-            <small id="fileHelpId" class="form-text text-muted">Select file to upload</small>
-        </div>
-        <div class="form-group">
-            <label for=""></label>
-            <textarea class="form-control" name="" id="" rows="5"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+<mat-progress-bar *ngIf="uploadProgress$ | async; let progress"
+        mode="determinate"
+        [value]="progress">
+    </mat-progress-bar>
+    <mat-card>
+  <mat-card-header>
+    <mat-card-title>Create New Greetings</mat-card-title>
+    <!-- <mat-card-subtitle>subtitle</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content fxLayout="row" fxLayoutAlign="space-between stretch">
+    <div>
+      <div class="full-width upload mb-10">
+        <input
+          type="file"
+          class="form-control-file"
+          name=""
+          id=""
+          placeholder=""
+          aria-describedby="fileHelpId"
+          (change)="upload($event)"
+        />
+
+        <button mat-icon-button (click)="delete()" [disabled]="!downloadUrl"><mat-icon>delete</mat-icon></button>
+
+      </div>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Enter greeting message here..." id="" cols="30" rows="10" #message></textarea>
+      </mat-form-field>
+    </div>
+    <div *ngIf="downloadUrl; else emptyImage" class="greeting-image-bg" [style.background-image]="'url(' + downloadUrl +')'">
+        <span>{{message.value}}</span>
+    </div>
+    <ng-template #emptyImage>
+      <div class="greeting-image-bg empty-image-bg">
+      <mat-icon>photo_size_select_actual</mat-icon>
+      Upload Greeting Image.
+    </div>
+    </ng-template>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Ok</button>
+  </mat-card-actions>
+</mat-card>

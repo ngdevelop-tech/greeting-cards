@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "greeting-cards",
+      "public": "dist/greeting-cards",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

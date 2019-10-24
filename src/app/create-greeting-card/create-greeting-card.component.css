@@ -1,3 +1,47 @@
 .greeting-card{
     padding: 5px;
 }
+
+.full-width{
+    width : 100%
+}
+
+.upload{
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload input{
+    margin : 0px 10px;
+}
+.greeting-image-bg{
+    padding : 10px;
+    background-color: #eee;
+    margin-left: 10px;
+    height: 250px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+    
+}
+mb-10{
+    margin-bottom: 10px;
+}
+
+.empty-image-bg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: lightgray
+}
+
+.greeting-image-bg span{
+    color : white;
+    font-family: cursive;
+    font-size: x-large;
+    font-style: oblique;
+}

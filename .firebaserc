@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "greeting-cards-2276a": {
+      "hosting": {
+        "greeting-cards": [
+          "greeting-cards-2276a"
+        ]
+      }
+    }
+  }
+}
